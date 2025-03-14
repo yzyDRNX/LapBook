@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lapbook de Contabilidad</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        .lapbook {
+            display: flex;
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .column {
+            flex: 1;
+            padding: 20px;
+        }
+        .left {
+            background-color: #e6f7ff;
+            border-right: 2px dashed #999;
+        }
+        .middle {
+            background-color: #f9f9f9;
+            text-align: center;
+            flex: 0.8;
+        }
+        .right {
+            background-color: #e6ffe6;
+            border-left: 2px dashed #999;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+        h2 {
+            color: #2c5282;
+            font-size: 18px;
+            margin-top: 20px;
+            text-decoration: underline;
+        }
+        .section {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: rgba(255,255,255,0.7);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .item {
+            margin: 8px 0;
+            display: flex;
+        }
+        .debit {
+            color: #d05;
+        }
+        .credit {
+            color: #080;
+        }
+        .equal {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        .symbol {
+            width: 25px;
+            font-weight: bold;
+        }
+        .content {
+            flex: 1;
+        }
+        .t-account {
+            margin: 20px auto;
+            width: 80%;
+            border-collapse: collapse;
+        }
+        .t-account th {
+            text-align: center;
+            border-bottom: 2px solid #333;
+            padding: 5px;
+        }
+        .t-account td {
+            padding: 5px;
+            vertical-align: top;
+        }
+        .t-account::before {
+            content: "";
+            /*position: absolute;*/
+            width: 2px;
+            background-color: #333;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+        }
+        .example {
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        .title {
+            text-align: center;
+            margin-bottom: 15px;
+            font-weight: bold;
+            color: #333;
+        }
+        .date {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lapbook</h1>
+    
+    <div class="lapbook">
+        <div class="column left">
+            <h2>DEBE (Cargos)</h2>
+            
+            <div class="section">
+                <div class="title">1) Analítico - Estado de resultados</div>
+                
+                <div class="item debit">
+                    <span class="symbol">D</span>
+                    <span class="content">Devoluciones s/vtas.</span>
+                </div>
+                <div class="item debit">
+                    <span class="symbol">D</span>
+                    <span class="content">Rebajas s/vtas.</span>
+                </div>
+                <div class="item debit">
+                    <span class="symbol">D</span>
+                    <span class="content">Desctos s/vtas.</span>
+                </div>
+                <div class="item debit">
+                    <span class="symbol">D</span>
+                    <span class="content">Compras</span>
+                </div>
+                <div class="item debit">
+                    <span class="symbol">D+</span>
+                    <span class="content">Gastos de compra</span>
+                </div>
+                <div class="item debit">
+                    <span class="symbol">D</span>
+                    <span class="content">Costo de lo vendido</span>
+                </div>
+                <div class="item debit">
+                    <span class="symbol">D</span>
+                    <span class="content">Gastos de vta</span>
+                </div>
+                <div class="item debit">
+                    <span class="symbol">D</span>
+                    <span class="content">Gastos de admón.</span>
+                </div>
+                <div class="item debit">
+                    <span class="symbol">D</span>
+                    <span class="content">Gastos generales</span>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="title">Ejemplo Debe</div>
+                <div class="item">
+                    <span class="content">Costo de ventas: 4,000</span>
+                </div>
+                <div class="item">
+                    <span class="content">Ventas: 1,500.00</span>
+                </div>
+                <div class="item">
+                    <span class="content">Pérdida: 5,500.00</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="column middle">
+            <h2>T-CUENTA</h2>
+            
+            <div class="section">
+                <table class="t-account">
+                    <tr>
+                        <th>Deudor<br>Debe</th>
+                        <th>Acreedor<br>Haber</th>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="section">
+                <div class="title">Operaciones</div>
+                <div class="item">
+                    <span class="content">Ventas: $10,000</span>
+                </div>
+                <div class="item">
+                    <span class="content">Costo: $4,000</span>
+                </div>
+                <div class="item">
+                    <span class="content">Utilidad/ganancia: $6,000</span>
+                </div>
+            </div>
+
+            <div class="section"></div>
+                <div class="title">Concepto de Estado de resultados</div>
+                <p class="item">Es un informe financiero que resume los ingresos, gastos y ganancias o pérdidas de una empresa durante un período específico, permitiendo evaluar su desempeño financiero. </p>
+        </div>
+        
+        <div class="column right">
+            <h2>HABER (Abonos)</h2>
+            
+            <div class="section">
+                <div class="title">2) Inventarios perpetuos - Estado de resultados</div>
+                
+                <div class="item credit">
+                    <span class="symbol">A</span>
+                    <span class="content">Ventas</span>
+                </div>
+                <div class="item">
+                    <span class="symbol">=</span>
+                    <span class="content">Utilidad o Pérdida Bruta</span>
+                </div>
+                <div class="item">
+                    <span class="symbol">=</span>
+                    <span class="content">Utilidad o Pérdida de operación</span>
+                </div>
+                <div class="item credit">
+                    <span class="symbol">A</span>
+                    <span class="content">Dev. s/compras</span>
+                </div>
+                <div class="item credit">
+                    <span class="symbol">A</span>
+                    <span class="content">Reb. s/compras</span>
+                </div>
+                <div class="item credit">
+                    <span class="symbol">A</span>
+                    <span class="content">Desctos s/compras</span>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="title">Estructura de cálculo</div>
+                <div class="item credit">
+                    <span class="symbol">A</span>
+                    <span class="content">Ventas</span>
+                </div>
+                <div class="item debit">
+                    <span class="symbol">−</span>
+                    <span class="content">Costo de lo vendido</span>
+                </div>
+                <div class="item">
+                    <span class="symbol">=</span>
+                    <span class="content">Utilidad o Pérdida Bruta</span>
+                </div>
+                <div class="item debit">
+                    <span class="symbol">−</span>
+                    <span class="content">Gastos de operación</span>
+                </div>
+                <div class="item debit">
+                    <span class="symbol">D</span>
+                    <span class="content">Gastos de vta</span>
+                </div>
+                <div class="item debit">
+                    <span class="symbol">D</span>
+                    <span class="content">Gastos de admón.</span>
+                </div>
+                <div class="item debit">
+                    <span class="symbol">D</span>
+                    <span class="content">Gastos generales</span>
+                </div>
+                <div class="item">
+                    <span class="symbol">=</span>
+                    <span class="content">Utilidad o Pérdida de operación</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
